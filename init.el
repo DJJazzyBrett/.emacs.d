@@ -242,6 +242,7 @@
 
 ;;(require 'init-python)
 
+(require 'init-ess)
 
 
 ;; Local Variables:
