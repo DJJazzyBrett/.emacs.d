@@ -15,9 +15,6 @@
 ;; Emacs Debug Adapter Protocol.
 ;; https://emacs-lsp.github.io/dap-mode/
 
-;;(use-package dap-mode)
-
-
 (provide 'init-debug)
 
 ;;; init-debug ends here

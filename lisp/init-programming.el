@@ -30,6 +30,10 @@
 ;; A template system for Emacs.
 ;; https://github.com/joaotavora/yasnip
 
+(use-package yasnippet
+  :config
+  (yas-global-mode))
+
 
 ;; yasnippet-snippets
 ;; A collection of yasnippet snippets for many languages.
@@ -83,6 +87,8 @@
 ;; Emacs client/library for the Language Server Protocol.
 ;; https://emacs-lsp.github.io/lsp-mode/
 
+;; (use-package lsp-mode :hook ((lsp-mode . lsp-enable-which-key-integration))
+;; :config (setq lsp-completion-enable-additional-text-edit nil))
 
 ;; lsp-ui
 ;; UI integrations for lsp-mode.

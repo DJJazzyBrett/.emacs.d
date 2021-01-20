@@ -109,6 +109,7 @@
 ;; Basic Customizations
 ;; -------------------------------- ;;
 
+(global-visual-line-mode 1)                  ;; enable soft-wrap
 (setq inhibit-startup-screen t)              ;; Quiet startup
 (setq inhibit-startup-message t)             ;; Quiet startup
 (setq visible-bell 1)                        ;; Flashing when something goes wrong ---no blinking
@@ -241,6 +242,8 @@
 (require 'init-org-ref)
 
 ;;(require 'init-python)
+
+(require 'init-java-quickstart)
 
 (require 'init-ess)
 
