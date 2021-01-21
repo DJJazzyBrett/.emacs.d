@@ -9,10 +9,20 @@
 
 ;;; Commentary:
 
+;;; Code:
+
 
 ;; undo-tree
 ;; Replaces Emacs' undo system with a system that treats undo history as what it is: a branching tree of changes.
 ;; http://www.dr-qubit.org/undo-tree.html
+
+(use-package undo-tree
+  :diminish undo-tree-mode
+  :config
+  (progn
+    (global-undo-tree-mode)
+    (setq undo-tree-visualizer-timestamps t)
+    (setq undo-tree-visualizer-diff t)))
 
 
 ;; highlight-symbol
@@ -39,6 +49,17 @@
 ;; A minor mode to visualize blanks [TAB, (HARD) SPACE and NEWLINE].
 ;; https://www.emacswiki.org/emacs/WhiteSpace
 
+(use-package whitespace
+  :diminish whitespace-mode
+  :init
+  (dolist (hook '(prog-mode-hook text-mode-hook))
+    (add-hook hook #'whitespace-mode))
+  (add-hook 'before-save-hook #'whitespace-cleanup)
+  :config
+  (setq whitespace-line-column 80) ;; limit line length
+  (setq whitespace-style '(face tabs empty trailing lines-tail)))
+
+
 ;; linum-relative
 ;; Display relative line numbers is Emacs.
 ;; https://github.com/coldnew/linum-relative
@@ -52,30 +73,6 @@
 ;; beacon
 ;; Whenever the window scrolls, a light will shine on top of your cursor.
 ;; https://github.com/Malabarba/beacon
-
-
-;;; Code:
-
-
-(use-package undo-tree
-  :diminish undo-tree-mode
-  :config
-  (progn
-    (global-undo-tree-mode)
-    (setq undo-tree-visualizer-timestamps t)
-    (setq undo-tree-visualizer-diff t)))
-
-
-(use-package whitespace
-  :diminish whitespace-mode
-  :init
-  (dolist (hook '(prog-mode-hook text-mode-hook))
-    (add-hook hook #'whitespace-mode))
-  (add-hook 'before-save-hook #'whitespace-cleanup)
-  :config
-  (setq whitespace-line-column 80) ;; limit line length
-  (setq whitespace-style '(face tabs empty trailing lines-tail)))
-
 
 (use-package beacon
   :diminish beacon-mode

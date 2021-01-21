@@ -9,29 +9,12 @@
 
 ;;; Commentary:
 
+;;; Code:
+
 
 ;; dired
 ;; Makes an Emacs buffer that contains a listing of a directory, and optionally some of its subdirectories as well.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html
-
-
-;; dired-x
-;; A GNU Emacs Package containing extra features.
-;; https://www.gnu.org/software/emacs/manual/html_node/dired-x/
-
-
-;; dired+
-;; Extends functionalities provided by standard Emacs libs dired.el, dired-aux.el, and dired-x.el.
-;; https://www.emacswiki.org/emacs/DiredPlus
-
-
-;; treemacs
-;; A tree layout file explorer for Emacs.
-;; https://github.com/Alexander-Miller/treemacs
-
-
-;;; Code:
-
 
 (use-package dired
   :ensure nil
@@ -47,6 +30,20 @@
   ;; enable some really cool extensions like C-x C-j(dired-jump)
   (require 'dired-x))
 
+
+;; dired-x
+;; A GNU Emacs Package containing extra features.
+;; https://www.gnu.org/software/emacs/manual/html_node/dired-x/
+
+
+;; dired+
+;; Extends functionalities provided by standard Emacs libs dired.el, dired-aux.el, and dired-x.el.
+;; https://www.emacswiki.org/emacs/DiredPlus
+
+
+;; treemacs
+;; A tree layout file explorer for Emacs.
+;; https://github.com/Alexander-Miller/treemacs
 
 (use-package treemacs
   :defer t)

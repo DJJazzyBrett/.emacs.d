@@ -199,6 +199,8 @@
 
 (require 'init-dired)
 
+(require 'init-treemacs)
+
 (require 'init-avy)
 
 (require 'init-visual)

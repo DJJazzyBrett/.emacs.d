@@ -31,6 +31,7 @@
 ;; https://github.com/joaotavora/yasnip
 
 (use-package yasnippet
+  :diminish yas-global-mode
   :config
   (yas-global-mode))
 
