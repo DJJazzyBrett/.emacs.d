@@ -27,7 +27,7 @@
   (setq company-tooltip-align-annotations t)
   ;; invert the navigation direction if the completion popup-isearch-match
   ;; is displayed on top (happens near the bottom of windows)
-  (setq company-tooltip-flip-when-above t)
+  ;; (setq company-tooltip-flip-when-above t)
   (add-hook 'after-init-hook #'global-company-mode))
 
 
