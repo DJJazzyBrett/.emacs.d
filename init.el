@@ -191,6 +191,8 @@
 
 (require 'init-user)
 
+(require 'init-font)
+
 (require 'init-savehist)
 
 (require 'init-swiper)
@@ -247,7 +249,7 @@
 
 (require 'init-java-quickstart)
 
-(require 'init-ess)
+;;(require 'init-ess)
 
 
 ;; Local Variables:

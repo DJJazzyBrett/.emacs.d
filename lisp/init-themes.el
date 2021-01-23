@@ -8,6 +8,8 @@
 
 ;;; Commentary:
 
+;;; Code:
+
 
 ;; smart-mode-line
 ;; A powerful and beautiful mode-line for Emacs.
@@ -63,21 +65,17 @@
 ;; Utility package to collect various Icon Fonts and propertize them within Emacs.
 ;; https://github.com/domtronn/all-the-icons.el
 
+(use-package all-the-icons)
+
 
 ;; zenburn
 ;; A direct port of the popular Zenburn theme for vim.
 ;; https://github.com/bbatsov/zenburn-emacs
 
-
-;;; Code:
-
-
-(use-package all-the-icons)
-
-
 (use-package zenburn-theme
   :config
   (load-theme 'zenburn t))
+
 
 
 (provide 'init-themes)
