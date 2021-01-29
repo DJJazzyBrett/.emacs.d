@@ -26,26 +26,6 @@
 ;; http://cedet.sourceforge.net/
 
 
-;; yasnippet
-;; A template system for Emacs.
-;; https://github.com/joaotavora/yasnip
-
-(use-package yasnippet
-  :diminish yas-global-mode
-  :config
-  (yas-global-mode))
-
-
-;; yasnippet-snippets
-;; A collection of yasnippet snippets for many languages.
-;; https://github.com/AndreaCrotti/yasnippet-snippets
-
-
-;; auto-yasnippet
-;; A hybrid of keyboard macros and yasnippet.
-;; https://github.com/abo-abo/auto-yasnippet
-
-
 ;; mmm-mode
 ;; MMM Mode is a minor mode for Emacs that allows Multiple Major Modes to coexist in one buffer.
 ;; https://github.com/purcell/mmm-mode

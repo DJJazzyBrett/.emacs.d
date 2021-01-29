@@ -213,6 +213,8 @@
 
 (require 'init-programming)
 
+(require 'init-yasnippet)
+
 (require 'init-company)
 
 (require 'init-debug)
@@ -254,21 +256,6 @@
 ;;(require 'init-ess)
 
 
-
-;;(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
-
-(require 'ox-reveal)
-
-(require 'ox-latex)
-
-(add-to-list 'org-latex-classes
-             '("beamer"
-               "\\documentclass\[presentation\]\{beamer\}"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-;; (setq org-latex-compiler "xelatex")
 
 
 

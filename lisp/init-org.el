@@ -18,6 +18,9 @@
 (add-hook 'org-mode-hook #'org-indent-mode)
 
 
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+
 ;;(setq org-directory "~/Reference/")
 ;;(setq org-default-notes-file (concat org-directory "notes.org"))
 
