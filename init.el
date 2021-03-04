@@ -243,12 +243,16 @@
 
 (require 'init-java-quickstart)
 
+(require 'init-ocaml)
+
 ;; (require 'init-python)
 ;; (require 'init-java)
 ;; (require 'init-ess)
 ;; (require 'init-finance)
 ;; (require 'init-graphviz)
 ;; (require 'init-plantuml)
+
+
 
 
 ;; Local Variables:
