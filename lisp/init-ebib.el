@@ -51,6 +51,9 @@
   (setq ebib-notes-template "#+TITLE: Notes on: %T\n\n>|<")
   (remove-hook 'ebib-notes-new-note-hook #'org-narrow-to-subtree))
 
+;; see https://orgmode.org/worg/org-tutorials/org-latex-export.html#sec-17-2
+;; (org-add-link-type "ebib" 'ebib)
+
 
 (provide 'init-ebib)
 

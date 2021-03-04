@@ -22,6 +22,16 @@
            (list (car (org-ref-get-bibtex-key-and-file thekey)))))))
 
 
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"))
+
+
+;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+
 (provide 'init-org-ref)
 
 ;;; init-org-ref ends here

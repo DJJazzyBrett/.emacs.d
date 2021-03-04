@@ -48,6 +48,19 @@
   (add-hook 'java-mode-hook 'lsp))
 
 
+;; https://github.com/neppramod/java_emacs/blob/master/emacs-configuration.org
+;;(use-package yasnippet :config (yas-global-mode))
+;;(use-package yasnippet-snippets :ensure t)
+;; In java mode, if you type pr and hit <TAB> it should complete to System.out.println("text");
+;; To create a new snippet you can use yas-new-snippet command.
+
+
+(setq lsp-java-inhibit-message t)
+
+(setq lsp-headerline-breadcrumb-enable t)
+
+
+
 (provide 'init-java-quickstart)
 
 

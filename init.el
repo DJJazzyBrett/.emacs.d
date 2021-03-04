@@ -235,28 +235,20 @@
 
 (require 'init-themes)
 
-;;(require 'init-finance)
-
-;;(require 'init-graphviz)
-
-;;(require 'init-plantuml)
-
 (require 'init-ebib)
 
 (require 'init-org)
 
 (require 'init-org-ref)
 
-;; (require 'init-org-reveal)
-
-;;(require 'init-python)
-
 (require 'init-java-quickstart)
 
-;;(require 'init-ess)
-
-
-
+;; (require 'init-python)
+;; (require 'init-java)
+;; (require 'init-ess)
+;; (require 'init-finance)
+;; (require 'init-graphviz)
+;; (require 'init-plantuml)
 
 
 ;; Local Variables:

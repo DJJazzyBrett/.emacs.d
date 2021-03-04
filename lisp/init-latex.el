@@ -15,7 +15,7 @@
 ;; An extensible package for writing and formatting Tex files.
 ;; https://www.gnu.org/software/auctex/
 
-(load "auctex.el" nil t t)
+;; (load "auctex.el" nil t t)
 
 
 ;; latex-preview-pane
@@ -38,17 +38,14 @@
 ;; A minor mode supporting fast insertion of environment templates and math stuff in LaTeX.
 ;; https://github.com/cdominik/cdlatex
 
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
-(add-hook 'latex-mode-hook 'turn-on-cdlatex)   ; with Emacs latex mode
+;; (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
+;; (add-hook 'latex-mode-hook 'turn-on-cdlatex)   ; with Emacs latex mode
 
+;; (setq org-latex-compiler "xelatex")
 
+;; (setq exec-path (append exec-path '("/usr/texbin")))
 
-
-(setq exec-path (append exec-path '("/usr/texbin")))
-
-
-
-(require 'ox-reveal)
+;; (require 'ox-reveal)
 
 (require 'ox-latex)
 
@@ -59,8 +56,26 @@
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
-;; (setq org-latex-compiler "xelatex")
 
+(add-to-list 'org-latex-classes
+             '("book"
+               "\\documentclass{book}"
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+             )
+
+
+(add-to-list 'org-latex-classes
+             '("tufte-book"
+               "\\documentclass{tufte-book}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
 (provide 'init-latex)
