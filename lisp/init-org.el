@@ -59,7 +59,8 @@
    (lisp       . t)
    (shell      . t)
    (python     . t)
-;; (ipython    . t)
+   ;; (ipython    . t)
+   ;; (plantuml   . t)
    (haskell    . t)
    (ruby       . t)
    (C          . t)
@@ -75,6 +76,19 @@
 ;; Syntax highlight in #+BEGIN_SRC blocks
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
+
+
+;; https://gist.github.com/stardiviner/dd7f4bf5f38dfffc3afc
+(defcustom org-inline-image-background nil
+  "The color used as the default background for inline images. When nil, use the default face background."
+  :group 'org
+  :type '(choice color (const nil)))
+
+(setq org-inline-image-background "white")
+
+
+;; https://emacs.stackexchange.com/questions/30520/org-mode-c-c-c-c-to-display-inline-image
+(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
 
 (provide 'init-org)

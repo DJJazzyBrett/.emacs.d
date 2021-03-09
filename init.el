@@ -248,7 +248,7 @@
 ;; (require 'init-ess)
 ;; (require 'init-finance)
 ;; (require 'init-graphviz)
-;; (require 'init-plantuml)
+(require 'init-plantuml)
 
 
 ;; Local Variables:
