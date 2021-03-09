@@ -245,12 +245,14 @@
 
 (require 'init-ocaml)
 
+(require 'init-plantuml)
+
 ;; (require 'init-python)
 ;; (require 'init-java)
 ;; (require 'init-ess)
 ;; (require 'init-finance)
 ;; (require 'init-graphviz)
-(require 'init-plantuml)
+
 
 
 
