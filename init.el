@@ -247,6 +247,8 @@
 
 (require 'init-plantuml)
 
+(require 'init-slime)
+
 ;; (require 'init-python)
 ;; (require 'init-java)
 ;; (require 'init-ess)
