@@ -70,6 +70,9 @@
    (makefile   . t)
    ))
 
+;; Allow alphabetically ordered lists
+(setq org-list-allow-alphabetical t)
+
 ;; Don't prompt before running code in orgmode
 (setq org-confirm-babel-evaluate nil)
 
