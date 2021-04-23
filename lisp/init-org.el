@@ -94,6 +94,13 @@
 (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
 
+
+;; https://orgmode.org/worg/org-tutorials/org-latex-preview.html
+(setq org-latex-create-formula-image-program 'dvipng)
+
+;;(eval-after-load 'org
+;;  (add-to-list 'org-latex-packages-alist '("" "tcolorbox" t)))
+
 (provide 'init-org)
 
 
