@@ -101,6 +101,11 @@
 ;;(eval-after-load 'org
 ;;  (add-to-list 'org-latex-packages-alist '("" "tcolorbox" t)))
 
+
+;; https://orgmode.org/worg/org-tutorials/org-latex-export.html
+(setq org-export-latex-hyperref-format "\\ref{%s}")
+
+
 (provide 'init-org)
 
 

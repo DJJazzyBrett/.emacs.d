@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(and (require 'cl)
+(and (require 'cl-lib)
      (use-package tuareg
        :ensure t
        :config
