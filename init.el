@@ -243,7 +243,7 @@
 
 (require 'init-java-quickstart)
 
-(require 'init-ocaml)
+;;(require 'init-ocaml)
 
 (require 'init-plantuml)
 
