@@ -198,13 +198,15 @@
 ;; Automatic Timestamps
 ;; -------------------------------- ;;
 
-;; Update files with last modifed date
 ;; https://github.com/pprevos/EmacsLife/blob/master/init.el
+;; http://emacs-fu.blogspot.com/2008/12/automatic-timestamps.html
+
 ;;(setq time-stamp-active t
 ;;      time-stamp-start "#\\+lastmod:[ \t]*"
 ;;      time-stamp-end "$"
 ;;      time-stamp-format "%04Y-%02m-%02d")
-;;(add-hook 'before-save-hook 'time-stamp nil)
+
+(add-hook 'before-save-hook 'time-stamp)
 
 
 ;; -------------------------------- ;;

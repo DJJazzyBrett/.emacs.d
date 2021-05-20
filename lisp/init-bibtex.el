@@ -51,13 +51,14 @@
   (setq bibtex-completion-bibliography "~/reference/library/my-books.bib"
         bibtex-completion-library-path "~/reference/library/bibtex-pdfs"
         bibtex-completion-notes-path "~/reference/library/bibtex-notes"
-        ;;bibtex-completion-notes-path "~/reference/roam"
         bibtex-completion-notes-symbol "✎")
-  ;; https://hugocisneros.com/org-config/#org-ref-and-bibtex
   (setq bibtex-completion-notes-template-multiple-files
-        ":PROPERTIES:\n:ROAM_REFS: cite:${=key=}\n:END:\n#+TITLE: Notes on: ${title} by ${author-or-editor} (${year})\n#+lastmod: Time-stamp: <>\n#+ORG_REF: cite:${=key=}\n\n- source :: cite:${=key=}
-\n\n* TODO Summary\n* TODO Comments\n\n
-bibliography:~/reference/library/my-books.bib"))
+        "#+TITLE: Notes on: ${title} by ${author-or-editor} (${year})\n#+Time-stamp: <>\n\n- source :: cite:${=key=}\n\n* TODO Summary\n* TODO Comments\n* TODO Topics\n\n"))
+;; bibliography:~/reference/library/my-books.bib"))
+
+
+;; [mebbe worth revisiting later ...]
+;; https://hugocisneros.com/org-config/#org-ref-and-bibtex
 
 
 (provide 'init-bibtex)
