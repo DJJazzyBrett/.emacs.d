@@ -53,7 +53,7 @@
         bibtex-completion-notes-path "~/reference/library/bibtex-notes"
         bibtex-completion-notes-symbol "✎")
   (setq bibtex-completion-notes-template-multiple-files
-        "#+TITLE: Notes on: ${title} by ${author-or-editor} (${year})\n#+Time-stamp: <>\n\n- source :: cite:${=key=}\n\n* TODO Summary\n* TODO Comments\n* TODO Topics\n\n"))
+        "#+TITLE: Notes on: ${title} by ${author-or-editor} (${year})\n#+Time-stamp: <>\n\n- source :: cite:${=key=}\n\n* TODO Summary\n\n* TODO Comments\n\n* TODO Topics\n\n"))
 ;; bibliography:~/reference/library/my-books.bib"))
 
 
