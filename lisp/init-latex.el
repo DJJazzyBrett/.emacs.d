@@ -49,6 +49,37 @@
 
 (require 'ox-latex)
 
+
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"))
+
+
+;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+
+(add-to-list 'org-latex-classes
+             '("apa6"
+               "\\documentclass{apa6}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
 (add-to-list 'org-latex-classes
              '("beamer"
                "\\documentclass\[presentation\]\{beamer\}"
@@ -64,8 +95,38 @@
                ("\\chapter{%s}" . "\\chapter*{%s}")
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
-             )
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+
+
+(add-to-list 'org-latex-classes
+             '("koma-article"
+               "\\documentclass{scrartcl}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
+;; http://pragmaticemacs.com/emacs/org-mode-basics-v-exporting-your-notes/
+(add-to-list 'org-latex-classes
+             '("jazzydoc"
+               "\\documentclass{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage{graphicx}
+\\usepackage{longtable}
+\\usepackage{hyperref}
+\\usepackage{natbib}
+\\usepackage{amssymb}
+\\usepackage{amsmath}
+\\usepackage{geometry}
+\\geometry{a4paper,left=2.5cm,top=2cm,right=2.5cm,bottom=2cm,marginparsep=7pt, marginparwidth=.6in}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
 (add-to-list 'org-latex-classes
@@ -76,6 +137,11 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
+
+;; https://gitlab.com/nathanfurnal/dotemacs/-/blob/master/latex/template.el
+;; see above link for interesting notes_en example document class
 
 
 (provide 'init-latex)

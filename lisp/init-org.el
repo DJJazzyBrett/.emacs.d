@@ -15,7 +15,7 @@
 (require 'org)
 
 
-(add-hook 'org-mode-hook #'org-indent-mode)
+;;(add-hook 'org-mode-hook #'org-indent-mode)
 
 
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
@@ -46,8 +46,8 @@
 (use-package org-bullets
   :ensure t
   :init
-  (setq org-bullets-bullet-list
-        '("■" "◆" "▲" "▶"))
+  ;; (setq org-bullets-bullet-list
+  ;;       '("■" "◆" "▲" "▶"))
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
@@ -70,6 +70,21 @@
    (makefile   . t)
    ))
 
+
+;; https://lepisma.xyz/2017/10/28/ricing-org-mode/index.html
+(setq org-startup-indented t
+      ;; org-bullets-bullet-list '(" ") ;; no bullets, needs org-bullets package
+      ;; org-ellipsis ;; folding symbol
+      org-pretty-entities t
+      org-hide-emphasis-markers t
+      ;; show actually italicized text instead of /italicized text/
+      ;;org-agenda-block-separator ""
+      org-fontify-whole-heading-line t
+      org-fontify-done-headline t
+      org-fontify-quote-and-verse-blocks t)
+
+
+
 ;; Allow alphabetically ordered lists
 (setq org-list-allow-alphabetical t)
 
@@ -79,6 +94,7 @@
 ;; Syntax highlight in #+BEGIN_SRC blocks
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
+
 
 
 ;; https://gist.github.com/stardiviner/dd7f4bf5f38dfffc3afc
@@ -94,16 +110,25 @@
 (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
 
+;; https://lists.gnu.org/archive/html/emacs-orgmode/2014-08/msg01000.html
+(defadvice org-babel-execute-src-block (around progress nil activate)
+  "Give us some hint that we are running."
+  (set-face-attribute 'org-block-background nil :background "LightSteelBlue")
+  (message "Running your code block")
+  ad-do-it
+  (set-face-attribute 'org-block-background nil :background "gray")
+  (message "Done with code block"))
+
 
 ;; https://orgmode.org/worg/org-tutorials/org-latex-preview.html
-(setq org-latex-create-formula-image-program 'dvipng)
-
-;;(eval-after-load 'org
-;;  (add-to-list 'org-latex-packages-alist '("" "tcolorbox" t)))
+;; (setq org-latex-create-formula-image-program 'dvipng)
 
 
 ;; https://orgmode.org/worg/org-tutorials/org-latex-export.html
-(setq org-export-latex-hyperref-format "\\ref{%s}")
+;; (setq org-export-latex-hyperref-format "\\ref{%s}")
+
+
+;; C-c C-, (org-insert-structure-template)
 
 
 (provide 'init-org)

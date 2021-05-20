@@ -110,8 +110,8 @@
 ;; -------------------------------- ;;
 
 (global-visual-line-mode 1)                  ;; enable soft-wrap
-(setq inhibit-startup-screen t)              ;; Quiet startup
-(setq inhibit-startup-message t)             ;; Quiet startup
+;;(setq inhibit-startup-screen t)              ;; Quiet startup
+;;(setq inhibit-startup-message t)             ;; Quiet startup
 (setq visible-bell 1)                        ;; Flashing when something goes wrong ---no blinking
 (setq require-final-newline t)               ;; Newline at end of file
 (setq tab-always-indent 'complete)           ;; Smart tab behavior - indent or complete
@@ -120,6 +120,16 @@
 (setq-default indent-tabs-mode nil)          ;; Always indent using spaces, never tabs
 (fset 'yes-or-no-p 'y-or-n-p)                ;; Simplify 'yes-or-no'
 (setq inhibit-read-only t)
+
+
+;; -------------------------------- ;;
+;; Startup Buffer & Initial Mode
+;; -------------------------------- ;;
+
+(setq inhibit-startup-message t
+      initial-scratch-message "#+title: Scratch Buffer\n\n"
+      initial-major-mode 'org-mode)
+
 
 ;; -------------------------------- ;;
 ;; Miscellaneous GUI Settings
@@ -184,6 +194,18 @@
 (set-keyboard-coding-system 'utf-8)
 
 
+;; -------------------------------- ;;
+;; Automatic Timestamps
+;; -------------------------------- ;;
+
+;; Update files with last modifed date
+;; https://github.com/pprevos/EmacsLife/blob/master/init.el
+;;(setq time-stamp-active t
+;;      time-stamp-start "#\\+lastmod:[ \t]*"
+;;      time-stamp-end "$"
+;;      time-stamp-format "%04Y-%02m-%02d")
+;;(add-hook 'before-save-hook 'time-stamp nil)
+
 
 ;; -------------------------------- ;;
 ;; Load Modules
@@ -235,15 +257,19 @@
 
 (require 'init-themes)
 
+(require 'init-olivetti)
+
 (require 'init-ebib)
 
 (require 'init-org)
 
 (require 'init-org-ref)
 
+;; (require 'init-org-roam)
+
 (require 'init-java-quickstart)
 
-;;(require 'init-ocaml)
+;; (require 'init-ocaml)
 
 (require 'init-plantuml)
 
