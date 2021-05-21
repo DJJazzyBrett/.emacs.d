@@ -277,7 +277,7 @@
 
 (require 'init-slime)
 
-;; (require 'init-python)
+(require 'init-python)
 ;; (require 'init-java)
 ;; (require 'init-ess)
 ;; (require 'init-finance)

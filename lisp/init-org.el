@@ -111,13 +111,14 @@
 
 
 ;; https://lists.gnu.org/archive/html/emacs-orgmode/2014-08/msg01000.html
-(defadvice org-babel-execute-src-block (around progress nil activate)
-  "Give us some hint that we are running."
-  (set-face-attribute 'org-block-background nil :background "LightSteelBlue")
-  (message "Running your code block")
-  ad-do-it
-  (set-face-attribute 'org-block-background nil :background "gray")
-  (message "Done with code block"))
+;;(defadvice org-babel-execute-src-block (around progress nil activate)
+"Give us some hint that we are running."
+;;(set-face-attribute 'org-block-background nil :background "LightSteelBlue")
+
+;;(message "Running your code block")
+;;ad-do-it
+;;(set-face-attribute 'org-block-background nil :background "gray")
+;;(message "Done with code block"))
 
 
 ;; https://orgmode.org/worg/org-tutorials/org-latex-preview.html
@@ -129,6 +130,8 @@
 
 
 ;; C-c C-, (org-insert-structure-template)
+
+
 
 
 (provide 'init-org)
