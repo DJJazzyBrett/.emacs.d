@@ -52,13 +52,15 @@
 (use-package whitespace
   :diminish whitespace-mode
   :init
-  (dolist (hook '(prog-mode-hook text-mode-hook))
+  ;;(dolist (hook '(prog-mode-hook text-mode-hook))
+  (dolist (hook '(prog-mode-hook))
     (add-hook hook #'whitespace-mode))
   (add-hook 'before-save-hook #'whitespace-cleanup)
   :config
   (setq whitespace-line-column 80) ;; limit line length
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
 
+;; (setq whitespace-global-modes '(not org-mode))
 
 ;; linum-relative
 ;; Display relative line numbers is Emacs.

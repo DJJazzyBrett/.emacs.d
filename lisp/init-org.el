@@ -131,7 +131,7 @@
 
 ;; C-c C-, (org-insert-structure-template)
 
-(setq whitespace-global-modes '(not org-mode))
+;; (setq whitespace-global-modes '(not org-mode))
 
 
 (provide 'init-org)
