@@ -43,6 +43,13 @@
     (smartparens-global-mode 1)
     (show-paren-mode t)))
 
+;; https://github.com/Fuco1/smartparens/blob/master/smartparens-config.el
+;; emacs is lisp hacking enviroment, so we set up some most common
+;; lisp modes too
+(sp-with-modes sp-lisp-modes
+  ;; disable ', it's the quote character!
+  (sp-local-pair "'" nil :actions nil))
+
 
 ;; Aggressive-indent
 ;; Emacs minor mode that keeps your code always indented. More reliable than electric-indent-mode.

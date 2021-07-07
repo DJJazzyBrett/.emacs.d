@@ -47,18 +47,27 @@
 
 ;; (require 'ox-reveal)
 
+
 (require 'ox-latex)
 
 
-(setq org-latex-pdf-process
-      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+;; (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
+(add-to-list 'org-latex-logfiles-extensions "bbl")
+(add-to-list 'org-latex-logfiles-extensions "tex")
+
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "bibtex %b"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"))
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 
-;; (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-
+(setq org-latex-minted-options
+      '(("frame" "lines") ("linenos" "true")
+        ("breaklines" "true") ("breakanywhere" "true")
+        ("framesep" "3mm")))
 
 (add-to-list 'org-latex-classes
              '("apa6"

@@ -34,6 +34,11 @@
 ;;  (add-hook 'elpy-mode-hook #'py-autopep8-enable-on-save)
 
 
+;; specify conda install explicitly (?)
+;; (setq org-babel-python-command "/home/hugo/miniconda3/bin/python")
+
+
+
 (provide 'init-python)
 
 ;;; init-python ends here
