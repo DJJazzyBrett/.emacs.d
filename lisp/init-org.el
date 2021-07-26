@@ -64,6 +64,7 @@
    (haskell    . t)
    (ruby       . t)
    (C          . t)
+   (java       . t)
    (dot        . t)
    (latex      . t)
    (org        . t)
