@@ -65,8 +65,12 @@
 
 
 (setq org-latex-minted-options
-      '(("frame" "lines") ("linenos" "true")
-        ("breaklines" "true") ("breakanywhere" "true")
+      '(("frame" "lines")
+        ("fontsize" "\\scriptsize")
+        ;;("linenos" "true")
+        ("linenos" "")
+        ;;("breaklines" "true")
+        ;;("breakanywhere" "true")
         ("framesep" "3mm")))
 
 (add-to-list 'org-latex-classes

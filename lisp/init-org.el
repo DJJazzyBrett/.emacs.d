@@ -90,17 +90,22 @@
 (setq org-list-allow-alphabetical t)
 
 ;; Don't prompt before running code in orgmode
-(setq org-confirm-babel-evaluate nil)
+;;(setq org-confirm-babel-evaluate nil)
 
 ;; Syntax highlight in #+BEGIN_SRC blocks
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
 
+;; enable prompt-free code running
+(setq org-confirm-babel-evaluate nil
+      org-link-elisp-confirm-function nil
+      org-link-shell-confirm-function nil)
 
 
 ;; https://gist.github.com/stardiviner/dd7f4bf5f38dfffc3afc
 ;;(defcustom org-inline-image-background nil
-;;  "The color used as the default background for inline images. When nil, use the default face background."
+;; "The color used as the default background for inline images.
+;; When nil, use the default face background."
 ;;  :group 'org
 ;;  :type '(choice color (const nil)))
 
@@ -113,7 +118,7 @@
 
 ;; https://lists.gnu.org/archive/html/emacs-orgmode/2014-08/msg01000.html
 ;;(defadvice org-babel-execute-src-block (around progress nil activate)
-"Give us some hint that we are running."
+;; "Give us some hint that we are running."
 ;;(set-face-attribute 'org-block-background nil :background "LightSteelBlue")
 
 ;;(message "Running your code block")
@@ -131,6 +136,37 @@
 
 
 ;; C-c C-, (org-insert-structure-template)
+
+
+;; kindly borrowed from https://github.com/jkitchin/jmax/blob/master/jmax-org.el
+;;* Expansions for blocks
+;; add <p for python expansion
+(add-to-list 'org-structure-template-alist
+             '("p" "#+BEGIN_SRC python\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <por for python expansion with raw output
+(add-to-list 'org-structure-template-alist
+             '("por" "#+BEGIN_SRC python :results output raw\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <pv for python expansion with value
+(add-to-list 'org-structure-template-alist
+             '("pv" "#+BEGIN_SRC python :results value\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <el for emacs-lisp expansion
+(add-to-list 'org-structure-template-alist
+             '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC" "<src lang=\"emacs-lisp\">\n?\n</src>"))
+
+;; add <sh for shell
+(add-to-list 'org-structure-template-alist
+             '("sh" "#+BEGIN_SRC sh\n?\n#+END_SRC" "<src lang=\"shell\">\n?\n</src>"))
+
+;; set default exports to both code and results
+(setq org-babel-default-header-args
+      (cons '(:exports . "both")
+            (assq-delete-all :exports org-babel-default-header-args)))
+
+;; Interpret "_" and "^" for export when braces are used.
+;; (setq org-export-with-sub-superscripts '{})
 
 
 (provide 'init-org)
