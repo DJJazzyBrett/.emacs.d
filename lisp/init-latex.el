@@ -51,7 +51,7 @@
 (require 'ox-latex)
 
 
-;; (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
+(add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
 (add-to-list 'org-latex-logfiles-extensions "bbl")
 (add-to-list 'org-latex-logfiles-extensions "tex")
 
@@ -63,6 +63,11 @@
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
+;;(setq org-latex-listings 'minted
+;;      org-latex-packages-alist '(("" "minted"))
+;;      org-latex-pdf-process
+;;      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 (setq org-latex-minted-options
       '(("frame" "lines")
