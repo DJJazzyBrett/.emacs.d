@@ -237,13 +237,13 @@
 
 (require 'init-programming)
 
-(require 'init-yasnippet)
+;;(require 'init-yasnippet)
 
 (require 'init-company)
 
 (require 'init-debug)
 
-(require 'init-origami)
+;;(require 'init-origami)
 
 (require 'init-flycheck)
 
@@ -253,7 +253,7 @@
 
 (require 'init-latex)
 
-(require 'init-pdf)
+;;(require 'init-pdf)
 
 (require 'init-magit)
 
@@ -267,19 +267,18 @@
 
 (require 'init-org-ref)
 
-;; (require 'init-org-roam)
-
-(require 'init-java-quickstart)
-
-;; (require 'init-ocaml)
-
-(require 'init-plantuml)
+;;(require 'init-plantuml)
 
 (require 'init-slime)
 
 (require 'init-python)
+
+(require 'init-lsp)
+
+;; (require 'init-java-quickstart)
 ;; (require 'init-java)
 ;; (require 'init-ess)
+;; (require 'init-ocaml)
 ;; (require 'init-finance)
 ;; (require 'init-graphviz)
 

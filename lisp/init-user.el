@@ -12,7 +12,7 @@
 ;;; Code:
 
 
-(setq user-full-name "DJjazzyBrett"
+(setq user-full-name "DJJazzyBrett"
       user-mail-address "mmoc.liamg.ta@gmail.com")
 
 

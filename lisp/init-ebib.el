@@ -22,7 +22,7 @@
   ;;(add-hook 'ebib-entry-mode-hook #'no-trailing-whitespace)
   :config
   ;; point it to our database
-  (setq ebib-file-search-dirs `("~/reference/library/bibtex-pdfs"))
+  (setq ebib-file-search-dirs '("~/reference/library"))
   (setq ebib-notes-directory '("~/reference/library/bibtex-notes"))
   (setq ebib-preload-bib-files '("~/reference/library/my-books.bib"))
 
