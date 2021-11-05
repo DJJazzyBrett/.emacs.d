@@ -17,6 +17,9 @@
 
 ;; (load "auctex.el" nil t t)
 
+(use-package tex
+    :ensure auctex
+    :defer t)
 
 ;; latex-preview-pane
 ;; Minor mode that enables you to preview LaTeX files directly in Emacs.
@@ -38,6 +41,13 @@
 ;; A minor mode supporting fast insertion of environment templates and math stuff in LaTeX.
 ;; https://github.com/cdominik/cdlatex
 
+  (use-package cdlatex
+    :defer t
+    :ensure t
+    :init
+    (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+    (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex))
+
 ;; (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
 ;; (add-hook 'latex-mode-hook 'turn-on-cdlatex)   ; with Emacs latex mode
 
@@ -52,6 +62,9 @@
 
 
 (add-to-list 'org-latex-packages-alist '("" "listingsutf8"))
+(add-to-list 'org-latex-packages-alist '("" "color"))
+
+
 (add-to-list 'org-latex-logfiles-extensions "bbl")
 (add-to-list 'org-latex-logfiles-extensions "tex")
 

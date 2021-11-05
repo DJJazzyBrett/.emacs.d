@@ -34,6 +34,11 @@
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 
+(use-package lsp-java
+  :config
+  (add-hook 'java-mode-hook 'lsp))
+
+
 ;; optionally if you want to use debugger
 (use-package dap-mode
   :after lsp-mode
@@ -42,11 +47,6 @@
 
 (use-package dap-java
   :ensure nil)
-
-
-(use-package lsp-java
-  :config
-  (add-hook 'java-mode-hook 'lsp))
 
 
 (setq lsp-java-inhibit-message t)

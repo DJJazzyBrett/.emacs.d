@@ -65,7 +65,7 @@
 
 ;; (require 'slime-autoloads)
 
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq inferior-lisp-program "/usr/bin/sbcl")
 
 ;; (add-to-list 'slime-contribs 'slime-repl)
 ;; (add-to-list 'slime-contribs 'inferior-slime)
